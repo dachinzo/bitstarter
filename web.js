@@ -5,7 +5,7 @@ var app = express.createServer(express.logger());
 app.get('/', function(request, response) {
   
   var content = fs.readFile('index.html');
-  response.send('content');
+  response.send(content);
   
   
 });
