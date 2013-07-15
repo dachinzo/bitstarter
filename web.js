@@ -1,10 +1,11 @@
 var express = require('express');
 var fs = require('fs');
 var app = express.createServer(express.logger());
-
+var content;
 app.get('/', function(request, response) {
   
-  var content = fs.readFile('index.html');
+  content = fs.readFileSync('./index.html', 'utf8');
+  console.log("Listening on " + content);
   response.send(content);
   
   
